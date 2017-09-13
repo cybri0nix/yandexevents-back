@@ -66,7 +66,6 @@ module.exports = {
         return params.date.indexOf(eventDate) > -1
       })
     }
-
     // Order events by col
     if (params.orderCol) {
       const col = params.orderCol
@@ -79,12 +78,18 @@ module.exports = {
 
     // Pagination/limits
     if (params.page) {
-      const page = params.page === 0 ? 0 : params.page - 1
-      const end = page + (params.itemsPerPage || DEFAULT_ITEMS_PER_PAGE)
-      events = events.slice(page, end)
+      // const page = params.page === 0 ? 0 : params.page - 1
+      // const end = page + (params.itemsPerPage || DEFAULT_ITEMS_PER_PAGE)
+      // events = events.slice(page, end)
+
+      --params.page;
+      events = events.slice(params.page * (params.itemsPerPage||DEFAULT_ITEMS_PER_PAGE), (params.page + 1) * (params.itemsPerPage||DEFAULT_ITEMS_PER_PAGE))
     } else {
-      events = events.slice(0, params.itemsPerPage || DEFAULT_ITEMS_PER_PAGE)
+      if (events.length) {
+        events = events.slice(0, params.itemsPerPage || DEFAULT_ITEMS_PER_PAGE)
+      }
     }
+    
 
     // for tests
     // const newEvents = []
@@ -94,8 +99,6 @@ module.exports = {
 
     return events || []
   },
-
-
 
   getEvent: (eventId, holidayId) => {
     if (holidayId === 1) {
@@ -144,13 +147,30 @@ module.exports = {
     return []
   },
 
-
   getEntities: (holidayId, category) => {
     if (entities[holidayId]) {
       return entities[holidayId][category] || []
     } else {
       return []
     }
+  },
+
+  getEntity: (entityId, holidayId) => {
+    if (entities[holidayId]) {
+      let i;
+      const categories = Object.keys(entities[holidayId])
+      let foundEntity = null
+
+      for (i = 0; i < categories.length; i++) {
+        foundEntity = entities[holidayId][categories[i]].filter((item) => {
+          return item.id == entityId
+        })
+        if (foundEntity) {
+          return foundEntity
+        }
+      }
+    }
+    return {}
   },
 
   getHint: (holidayId) => {
