@@ -3,39 +3,32 @@ module.exports = {
     "artists": [
       {
         "id": 1,
-        "fullname": "Артистов Артист 1",
-        "shortname": "Артист 1"
+        "title": "Сати Казанова",
+        "photo_small": "http://io.yamblz.ru/i/entities/1_small.jpg",
+        "photo_large": "http://io.yamblz.ru/i/entities/1_large.jpg"
       },
       {
         "id": 2,
-        "fullname": "Артистов Артист 2",
-        "shortname": "Артист 2"
+        "title": "Анита Цой",
+        "photo_small": "http://io.yamblz.ru/i/entities/2_small.jpg",
+        "photo_large": "http://io.yamblz.ru/i/entities/2_large.jpg"
       },
       {
         "id": 3,
-        "fullname": "Артистов Артист 3",
-        "shortname": "Артист 3"
-      },
-      {
-        "id": 4,
-        "fullname": "Артистов Артист 4",
-        "shortname": "Артист 4"
-      },
-      {
-        "id": 5,
-        "fullname": "Артистов Артист 5",
-        "shortname": "Артист 5"
+        "title": "Катя Лель",
+        "photo_small": "http://io.yamblz.ru/i/entities/3_small.jpg",
+        "photo_large": "http://io.yamblz.ru/i/entities/3_large.jpg"
       }
     ]
   },
   "2": {
     "exhibitions": [
       {
-        "id": "1",
+        "id": 6,
         "title": "Exhibit 1"
       },
       {
-        "id": "2",
+        "id": 7,
         "title": "Exhibit 2"
       }
     ]
