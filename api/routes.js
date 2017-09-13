@@ -15,6 +15,7 @@ router.get('/places', api.getPlaces)
 router.get('/place', api.getPlace)
 
 router.get('/entities', api.getEntities)
+router.get('/entity', api.getEntity)
 
 router.get('/hint', api.getHint)
 
