@@ -28,39 +28,84 @@ module.exports = {
       ],
       "categories": [
         {
-          "id": 1,
-          "title": "Выставки"
+            "id": "20",
+            "title": "Салюты",
+            "order_priority": 1200,
+            "events_count": "3"
         },
         {
-          "id": 2,
-          "title": "Фестивали"
+            "id": "2",
+            "title": "Тихий отдых",
+            "order_priority": 900,
+            "events_count": "5"
         },
         {
-          "id": 3,
-          "title": "Спорт"
+            "id": "3",
+            "title": "Парки",
+            "order_priority": 800,
+            "events_count": "4"
         },
         {
-          "id": 4,
-          "title": "Концерты"
+            "id": "4",
+            "title": "Молодежные",
+            "order_priority": 700,
+            "events_count": "6"
         },
         {
-          "id": 5,
-          "title": "Парки"
+            "id": "5",
+            "title": "Семейные",
+            "order_priority": 600,
+            "events_count": "5"
         },
         {
-          "id": 6,
-          "title": "Экскурсии"
-        }
-      ],
+            "id": "7",
+            "title": "Активный отдых",
+            "order_priority": 400,
+            "events_count": "6"
+        },
+        {
+            "id": "10",
+            "title": "Концерты",
+            "order_priority": 300,
+            "events_count": "31"
+        },
+        {
+            "id": "12",
+            "title": "Кинопоказ",
+            "order_priority": 200,
+            "events_count": "2"
+        },
+        {
+            "id": "9",
+            "title": "Выставки",
+            "order_priority": 200,
+            "events_count": "15"
+        },
+        {
+            "id": "11",
+            "title": "Фестиваль",
+            "order_priority": 150,
+            "events_count": "1"
+        },
+        {
+            "id": "13",
+            "title": "Экскурсии",
+            "order_priority": 100,
+            "events_count": "13"
+        },
+        {
+            "id": "8",
+            "title": "Официальные",
+            "order_priority": 100,
+            "events_count": "13"
+        }],
       "style": {
         "topBar": {
-          "backgroundColor": "#333333",
-          "color": "#ffffff"
+          "backgroundColor": "#fff",
+          "color": "#000"
         },
         "body": {},
-        "card": {
-          "boxShadow": "0 0 8px rgba(0, 0, 0, .5)"
-        },
+        "card": {},
         "event": {},
         "filter": {}
       }
@@ -79,7 +124,7 @@ module.exports = {
       {
         "id": 1,
         "name": "block_top_five_events",
-        "type": "events",
+        "type": "list",
         "route": {
           "url": "/event/%"
         },
@@ -88,10 +133,10 @@ module.exports = {
           "holiday": 1,
           "page": 1,
           "items_per_page": 5,
-          "order_col": "begin_time",
+          "order_col": "popularity",
         },
         "params": {
-          "title": "Топ 5 событий",
+          "title": "",
           "cardSize": "medium"
         },
         "style": "link-to-style-object",
@@ -137,20 +182,20 @@ module.exports = {
         },
         "style": "",
       },
-      {
-        "id": 4,
-        "name": "hint_parking",
-        "type": "hint",
-        "route": null,
-        "data": {
-          "method": "hint",
-          "holiday": 1,
-          "orderBy": "random",
-        },
-        "params": {
-          "cardSize": "medium"
-        }
-      },
+      // {
+      //   "id": 4,
+      //   "name": "hint_parking",
+      //   "type": "hint",
+      //   "route": null,
+      //   "data": {
+      //     "method": "hint",
+      //     "holiday": 1,
+      //     "orderBy": "random",
+      //   },
+      //   "params": {
+      //     "cardSize": "medium"
+      //   }
+      // },
       {
         "id": 5,
         "name": "artists",
@@ -161,7 +206,7 @@ module.exports = {
         "data": {
           "method": "entities",
           "holiday": 1,
-          "category": "artits"
+          "category": "artists"
         },
         "params": {
           "title": "Артисты",
